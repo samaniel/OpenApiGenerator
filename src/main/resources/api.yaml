@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: OpenApiGenerator project
+  version: 1.0.11
+  description: |-
+    This is a tutorial openapi proyect from samaniel.com
+  contact:
+    email: https://www.linkedin.com/in/cristobalcm/
+
+tags:
+  - name: token
+    description: token
+
+paths:
+  /token:
+    get:
+      tags:
+        - token
+      summary: Obtains a token
+      description: Obtains and returns a token from another endpoint using an underlying post operation in a service
+      operationId: token
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseDto'
+        '400':
+          description: Invalid value
+
+components:
+  schemas:
+    ResponseDto:
+      type: object
+      properties:
+        token:
+          type: string
+          example: token
